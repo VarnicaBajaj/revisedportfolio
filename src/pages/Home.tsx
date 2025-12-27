@@ -115,7 +115,7 @@ I lead end-to-end lifecycles for SaaS and AI platforms, driving strategy, shapin
 
                 <div style={{ marginTop: '0.3em', marginBottom: '0.3em' }}>
                 <ul style={{ paddingLeft: '1.2em', listStyleType: 'disc', margin: 0 }}>
-                   <li>Launched SaaS and AI products across HR, edtech, fintech, and e-commerce</li>
+                   <li>Launched SaaS and AI products across AgriTech, HR, EdTech, FinTech, and E-commerce</li>
                     <li>Built 0→1 products from scratch and scaled them to enterprise-level adoption</li>
                      <li>Aligned engineering, design, and business teams to ship at speed and with purpose</li>
                       <li>Engineered scalable systems for global brands</li>
@@ -293,45 +293,62 @@ I lead end-to-end lifecycles for SaaS and AI platforms, driving strategy, shapin
         <div className="container-custom">
           <SectionHeading
             title="Featured Work"
-            subtitle="Highlighting my most impactful projects that demonstrate strategic product thinking, cross-functional leadership, and measurable business outcomes."
+            subtitle="Highlighting my most impactful projects across diverse industries"
           />
-          
-          {/* Current/Recent Projects */}
-          <div className="mb-16">
-            <h3 className="text-xl font-bold mb-6 text-accent">🚀 Current & Recent Projects</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {projects.filter(p => ['wella-ecommerce-platform', 'adidas-labelling'].includes(p.id)).map((project, index) => (
-                <ProjectCard key={project.id} project={project} index={index} />
-              ))}
-            </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((project, index) => (
+              <motion.div
+                key={project.id}
+                className="group flex flex-col overflow-hidden rounded-lg bg-card shadow-sm transition-all hover:shadow-md"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: index * 0.05 }}
+                whileHover={{ y: -3 }}
+              >
+                <Link to={`/projects/${project.id}`} className="relative overflow-hidden h-40">
+                  <img
+                    src={project.coverImage}
+                    alt={project.title}
+                    className="w-full h-full object-contain"
+                  />
+                  <div className="absolute inset-0 bg-black/20 transition-opacity duration-300 group-hover:opacity-0 pointer-events-none" />
+                </Link>
+
+                <div className="flex flex-1 flex-col p-4">
+                  <h3 className="mb-2 text-lg font-bold line-clamp-2">
+                    <Link to={`/projects/${project.id}`} className="hover:underline">
+                      {project.title}
+                    </Link>
+                  </h3>
+                  <p className="mb-3 text-sm text-muted-foreground line-clamp-2">{project.shortDescription}</p>
+
+                  <div className="mt-auto flex flex-wrap gap-1">
+                    {project.tags.slice(0, 3).map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full bg-secondary px-2 py-0.5 text-xs font-medium"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                    {project.tags.length > 3 && (
+                      <span className="rounded-full bg-secondary px-2 py-0.5 text-xs font-medium">
+                        +{project.tags.length - 3}
+                      </span>
+                    )}
+                  </div>
+                </div>
+              </motion.div>
+            ))}
           </div>
-          
-          {/* Key Product Achievements */}
-          <div className="mb-16">
-            <h3 className="text-xl font-bold mb-6 text-accent">🎯 Key Product Achievements</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {projects.filter(p => ['smart-spending-dashboard', 'ats-portal'].includes(p.id)).map((project, index) => (
-                <ProjectCard key={project.id} project={project} index={index} />
-              ))}
-            </div>
-          </div>
-          
-          {/* Early Career Impact */}
-          <div className="mb-12">
-            <h3 className="text-xl font-bold mb-6 text-accent">📈 Early Career Impact</h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {projects.filter(p => ['educational-platform', 'ai-learning'].includes(p.id)).map((project, index) => (
-                <ProjectCard key={project.id} project={project} index={index} />
-              ))}
-            </div>
-          </div>
-          
-          <div className="text-center">
+
+          <div className="text-center mt-12">
             <p className="text-muted-foreground mb-6">
               Each project represents a unique challenge where I applied product thinking, stakeholder alignment, and execution excellence to drive meaningful outcomes.
             </p>
             <LinkButton to="/projects" variant="outline">
-              Explore All Projects & Case Studies <ArrowRight className="ml-2" size={18} />
+              View Detailed Case Studies <ArrowRight className="ml-2" size={18} />
             </LinkButton>
           </div>
         </div>
@@ -340,10 +357,10 @@ I lead end-to-end lifecycles for SaaS and AI platforms, driving strategy, shapin
       {/* Project Stats Section */}
       <section className="py-16 bg-secondary/20">
         <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div className="bg-card p-6 rounded-lg shadow-sm">
-              <h4 className="text-3xl font-bold text-accent mb-2">6+</h4>
-              <p className="text-muted-foreground">Projects Led</p>
+              <h4 className="text-3xl font-bold text-accent mb-2">8+</h4>
+              <p className="text-muted-foreground">Products Built</p>
             </div>
             <div className="bg-card p-6 rounded-lg shadow-sm">
               <h4 className="text-3xl font-bold text-accent mb-2">3+</h4>

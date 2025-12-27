@@ -4,6 +4,8 @@ import SeekhoProductsImage from '../assets/images/SeekhoProducts.png';
 import CerebryPrductImage from '../assets/images/CerebryProduct.png';
 import SmartSpendingImage from '../assets/images/SmartSpendingProduct.png';
 import WellaImage from '../assets/images/WellaProject.png';
+import FarmerBotImage from '../assets/images/WellaProject.png';
+import AIRoleplayImage from '../assets/images/WellaProject.png';
 
 export interface ProjectCategory {
   id: string;
@@ -121,6 +123,36 @@ const allProjects: ProjectType[] = [
     solutions: 'To overcome these challenges, I introduced a clear, scalable process that brought structure and predictability to the product delivery cycle. I established defined ownership for every task and created transparent workflows that connected academic content teams with AI engineers seamlessly. By designing a real-time progress tracking system, I gave stakeholders immediate visibility into project status and potential roadblocks, enabling faster decision-making and course correction. I also facilitated regular cross-functional syncs that broke down silos and aligned priorities across teams. These changes transformed the team\'s approach from reactive to proactive, accelerating delivery timelines while improving collaboration and focus.',
     impact: 'These initiatives resulted in a 30% reduction in sprint turnaround time, allowing the team to ship features and content faster and more predictably. The improved efficiency in content delivery empowered the AI engine to serve 25% more personalized questions each week, significantly enhancing the learner experience. Communication overheads were slashed, blockers were addressed faster, and the platform saw measurable improvements in output quality and delivery speed. My contributions not only optimized internal operations but directly impacted the learning outcomes of thousands of students using the Cerebry platform.',
     category: 'edtech'
+  },
+  {
+    id: 'whatsapp-farmer-bot',
+    title: 'WhatsApp Bot for Farmers - AgriTech Solution',
+    shortDescription: 'Built an AI-powered WhatsApp bot enabling farmers to detect crop diseases and pests through image recognition, while providing treatment recommendations, weather forecasts, and agronomy guidance.',
+    description: 'Developed a WhatsApp-based conversational AI platform designed to empower farmers with instant access to agricultural expertise. The bot leverages computer vision and AI to analyze crop images uploaded by farmers, identifying diseases and pest infestations in real-time. Beyond diagnostics, it provides comprehensive agricultural support including treatment protocols, weather forecasting, agronomy guidance, and a general Q&A system for farming-related queries.',
+    coverImage: FarmerBotImage,
+    images: [],
+    tags: ['AgriTech', 'AI/ML', 'WhatsApp Bot', 'Computer Vision', 'Product Management', 'Social Impact'],
+    role: 'Product Manager',
+    tools: ['WhatsApp Business API', 'Python', 'TensorFlow', 'Computer Vision APIs', 'Natural Language Processing', 'Cloud Infrastructure', 'Figma', 'Jira'],
+    challenges: 'Creating a simple, accessible solution for farmers with varying levels of digital literacy while ensuring accurate disease detection across diverse crop types and regional variations. The challenge also included designing an intuitive conversational flow that works seamlessly within WhatsApp constraints and handles poor network connectivity in rural areas.',
+    solutions: 'Designed an intuitive conversational interface that guides farmers step-by-step through the diagnosis process. Integrated AI-powered image recognition trained on diverse crop disease datasets to provide accurate identification. Built a comprehensive knowledge base covering treatment recommendations, weather data integration, and agronomy best practices. Implemented a multilingual interface to serve farmers across different regions and ensured the bot works efficiently even with low bandwidth.',
+    impact: 'Empowered farmers with instant access to agricultural expertise, reducing crop losses through early disease detection. The bot democratized access to agronomy knowledge, particularly benefiting small-scale farmers in remote areas who previously lacked access to agricultural consultants. Improved decision-making around pest management and crop care, contributing to better yields and sustainable farming practices.',
+    category: 'agritech'
+  },
+  {
+    id: 'ai-roleplay-training',
+    title: 'AI Roleplay Sales Training Platform',
+    shortDescription: 'Led product development for an AI-powered sales training platform featuring customized Indian avatars and regional accents, enabling realistic roleplay scenarios with instant feedback.',
+    description: 'Spearheaded the product strategy and execution for an innovative AI-driven sales training platform that revolutionizes how sales professionals practice and refine their skills. The platform features lifelike Indian avatars with authentic regional accents, creating immersive roleplay scenarios where users can practice sales conversations in safe, realistic environments. Built with a dual portal architecture serving both administrators and end users, the platform delivers personalized training experiences with comprehensive performance analytics and instant feedback.',
+    coverImage: AIRoleplayImage,
+    images: [],
+    tags: ['AI/ML', 'EdTech', 'Sales Enablement', 'Voice Synthesis', 'Product Strategy', 'Avatar Technology', 'Training Platform'],
+    role: 'Product Manager',
+    tools: ['AI Voice Synthesis', 'Avatar Technology', 'Natural Language Processing', 'Figma', 'Jira', 'Analytics Tools', 'Cloud Infrastructure', 'User Testing Tools'],
+    challenges: 'Designing realistic AI-powered roleplay scenarios that accurately simulate real-world sales interactions while providing meaningful feedback. The technical challenge included developing natural-sounding Indian accent voice synthesis with appropriate emotional range and creating a generic yet culturally appropriate avatar. Additionally, balancing three distinct roleplay templates with different feedback mechanisms and ensuring the platform scaled for enterprise training programs.',
+    solutions: 'Defined comprehensive product requirements covering three distinct roleplay templates: AI Coach providing mentorship, AI as Salesperson for customer perspective training, and AI as Customer for sales practice. Collaborated with AI engineers to develop realistic Indian avatar technology with natural facial expressions and lip-sync capabilities. Implemented a sophisticated feedback system with detailed performance analysis for coaching scenarios. Built a flexible topic-based scenario management system allowing training managers to customize content. Created an intuitive dual portal architecture separating admin and user experiences.',
+    impact: 'Transformed sales training by providing scalable, on-demand practice opportunities that were previously only available through expensive live training sessions. Enabled sales professionals to practice difficult conversations in a risk-free environment, building confidence and refining techniques before real customer interactions. The culturally relevant Indian avatars and accents made training more relatable and effective for the target market. Delivered measurable improvements in sales performance through consistent practice and data-driven feedback.',
+    category: 'edtech'
   }
 ];
 
@@ -136,6 +168,12 @@ export const projectCategories: ProjectCategory[] = [
     title: 'Educational Technology',
     description: 'AI-powered learning platforms and educational product development focused on personalized learning experiences.',
     projects: allProjects.filter(project => project.category === 'edtech')
+  },
+  {
+    id: 'agritech',
+    title: 'Agricultural Technology',
+    description: 'AI-powered solutions empowering farmers with crop disease detection, pest management, and agricultural guidance.',
+    projects: allProjects.filter(project => project.category === 'agritech')
   },
   {
     id: 'fintech',
